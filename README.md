@@ -1,3 +1,7 @@
+# Installations
+
+.NET SDK, VS Code, Git for windows
+
 # .NET Historical Context
 
 ### JSP (Java Server Pages)

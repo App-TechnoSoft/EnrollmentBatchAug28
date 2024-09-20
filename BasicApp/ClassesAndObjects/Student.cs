@@ -1,15 +1,17 @@
 class Student
 {
     public string name;
-    int rollNumber;
+    public int rollNumber;
     public DateTime dateOfBirth;
     string resume;
-    char gender;
+    public char gender;
 
     public void PrintDetails()
     {
-        Console.WriteLine(name);
-        Console.WriteLine(rollNumber);
-        Console.WriteLine(dateOfBirth.ToLongDateString());
+        // var output = name + ", " + rollNumber + ", " +  dateOfBirth.ToLongDateString(); 
+
+        // string interpolation
+        var message = $"{name}\t{rollNumber}\t{dateOfBirth.ToLongDateString()}";
+        Console.WriteLine(message);
     }
 }
