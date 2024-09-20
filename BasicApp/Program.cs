@@ -20,3 +20,9 @@ student2.PrintDetails();
 // Name     Roll Number  DOB    Gender
 // Bhawana Rawal   0       Tuesday, December 12, 2000   F
 // James Bond      0       Thursday, January 11, 1990   M
+
+var student3 = new Student();
+student3.name = "James Bond";
+student3.rollNumber = 67;
+student3.dateOfBirth = new DateTime(1990, 1, 11);
+student3.PrintDetails();
