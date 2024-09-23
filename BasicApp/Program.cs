@@ -38,4 +38,9 @@ Methods m = new();
 m.SayHello();
 m.SayHello("Hi!!!");
 
-Console.WriteLine();
+var av = m.GetAverage(23, 45, 67, 34, 456456, 45646, 335);
+var (Sum, Avarage) = m.GetResult(23, 45, 67, 34, 456456);
+
+Generics g = new();
+g.Print<decimal>(234.234234m);
+g.Print<string>("Hello");
