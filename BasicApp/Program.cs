@@ -33,14 +33,22 @@ student3.PrintDetails();
 var student4 = new Student("Rakeesh Bond", 798, new DateTime(2000, 1, 11), 'M');
 student4.PrintDetails();
 
+Teacher.PrintHeader();
+var teacher1 = new Teacher("Rakeesh Rana", "MS Computer Science", new DateTime(2000, 1, 11), 'M');
+teacher1.PrintDetails();
+var teacher2 = new Teacher("Rakeesh Rana", "MS Computer Science", new DateTime(2000, 1, 11), 'M');
+teacher2.PrintDetails();
 
-Methods m = new();
-m.SayHello();
-m.SayHello("Hi!!!");
+// Work for admin
 
-var av = m.GetAverage(23, 45, 67, 34, 456456, 45646, 335);
-var (Sum, Avarage) = m.GetResult(23, 45, 67, 34, 456456);
 
-Generics g = new();
-g.Print<decimal>(234.234234m);
-g.Print<string>("Hello");
+// Methods m = new();
+// m.SayHello();
+// m.SayHello("Hi!!!");
+
+// var av = m.GetAverage(23, 45, 67, 34, 456456, 45646, 335);
+// var (Sum, Avarage) = m.GetResult(23, 45, 67, 34, 456456);
+
+// Generics g = new();
+// g.Print<decimal>(234.234234m);
+// g.Print<string>("Hello");

@@ -1,4 +1,4 @@
-class Student
+class Student : Person
 {
     // Default parameterless constructor
     // public Student()
@@ -6,34 +6,23 @@ class Student
     // }
 
     // Parameterized contructor
-    public Student(string n, int r, DateTime d, char g)
-    {
-        name = n;
-        rollNumber = r;
-        dateOfBirth = d;
-        gender = g;
+    public Student(string n, int r, DateTime d, char g) : base(n, d, g)
+    {   
+        rollNumber = r;  
     }
-
-    public string name = "";
+    
     public int rollNumber;
-    public DateTime dateOfBirth;
-    string resume = "";
-    public char gender;
 
-    // Instance member
-    public void PrintDetails()
+    public override void PrintDetails()
     {
-        // var output = name + ", " + rollNumber + ", " +  dateOfBirth.ToLongDateString(); 
-
-        // string interpolation
-        var message = $"{name}\t\t{rollNumber}\t\t{dateOfBirth.ToLongDateString()}\t\t{gender}";
-        Console.WriteLine(message);
+        base.PrintDetails();
+        Console.WriteLine($"\t\t{rollNumber}");
     }
 
     // Static member
     public static void PrintHeader()
     {
-        var header = $"Name\t\tRoll Number\t\tDate Of Birth\t\tGender";
+        var header = $"Name\t\tDate Of Birth\t\tGender\t\tRoll Number";
         Console.WriteLine(header);
     }
 }
