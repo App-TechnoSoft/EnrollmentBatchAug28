@@ -21,10 +21,13 @@
 // Bhawana Rawal   0       Tuesday, December 12, 2000   F
 // James Bond      0       Thursday, January 11, 1990   M
 
+using CollegeManagement;
 
 Student.PrintHeader();
 
 var student = new Student("Sita Bond", 68, new DateTime(1990, 1, 11), 'F');
+student.Resume = "abcd";
+
 student.PrintDetails();
 
 var student3 = new Student("James Bond", 67, new DateTime(1990, 1, 11), 'F');
@@ -40,7 +43,9 @@ var teacher2 = new Teacher("Rakeesh Rana", "MS Computer Science", new DateTime(2
 teacher2.PrintDetails();
 
 // Work for admin
-
+Admin.PrintHeader();
+var admin1 = new Admin("Rakeesh Rana", new DateTime(2000, 1, 11), 'M', "IT");
+admin1.PrintDetails();
 
 // Methods m = new();
 // m.SayHello();
