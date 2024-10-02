@@ -19,3 +19,21 @@
 ### LTS: Long Term Support (3), STS: Standard Term Support (1.5)
 
 ### .NET applications: Console, Desktop, Web (SSR or REST), Mobile (Ios, Andriod), IoT, Cloud Native
+
+### Web Development
+#### ASP.NET Core: MVC (UI and API), Razor Pages, Blazor SPA (Full stack web dev)
+
+### SDLC Deployment Environments
+1. Dev environment - Devs code and debug
+2. Tst environment - QA validate
+3. Int environement - Integrating all features, QA
+4. UAT environment - PO, TPO validate
+5. Prod environment - Real users
+
+Alpha Version
+Beta version
+GA
+
+Preview
+Release Candidate
+GA
