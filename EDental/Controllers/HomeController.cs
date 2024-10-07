@@ -1,6 +1,6 @@
 using System.Diagnostics;
+using EDental.Data.Models;
 using Microsoft.AspNetCore.Mvc;
-using EDental.Models;
 
 namespace EDental.Controllers;
 
