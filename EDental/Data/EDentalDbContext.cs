@@ -5,6 +5,7 @@ namespace EDental.Data;
 public class EDentalDbContext: DbContext
 {
     public DbSet<Doctor> Doctor { get; set; }
+    public DbSet<Diagnosis> Diagnosis { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
