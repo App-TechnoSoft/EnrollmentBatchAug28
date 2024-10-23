@@ -1,7 +1,5 @@
-
-using EDental.Data;
 using EDental.Data.Models;
-using EDental.Infrastructure.Repositories;
+using EDental.Infrastructure.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 public class DoctorsController(IDoctorsRepository doctorsRepository): Controller

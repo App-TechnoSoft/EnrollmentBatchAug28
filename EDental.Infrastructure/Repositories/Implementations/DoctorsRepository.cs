@@ -1,21 +1,8 @@
 ﻿using EDental.Data;
 using EDental.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EDental.Infrastructure.Repositories.Interfaces;
 
-namespace EDental.Infrastructure.Repositories;
-
-public interface IDoctorsRepository
-{
-    public List<Doctor> Get();
-    public Doctor Get(int id);
-    public int Insert(Doctor doctor);
-    public int Edit(Doctor doctor);
-    public int Delete(Doctor doctor);
-}
+namespace EDental.Infrastructure.Repositories.Implementations;
 
 public class DoctorsRepository(EDentalDbContext dbContext) : IDoctorsRepository
 {
