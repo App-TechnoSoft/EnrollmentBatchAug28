@@ -1,17 +1,13 @@
 
 using EDental.Data;
 using EDental.Data.Models;
+using EDental.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-public class DoctorsController: Controller
+public class DoctorsController(IDoctorsRepository doctorsRepository): Controller
 {
-    EDentalDbContext db;   // Dependency Injection (DI)
-
-    public DoctorsController(EDentalDbContext dbContext)
-    {
-        db = dbContext;
-    }
-
+    private readonly IDoctorsRepository doctorsRepository = doctorsRepository;   // Dependency Injection (DI)
+        
     [HttpGet]
     public IActionResult Index()
     {
@@ -19,7 +15,7 @@ public class DoctorsController: Controller
         // ADO.NET
         // ORM Tool: EF Core, Dapper, NHibernate etc.
         
-        var doctors = db.Doctor.ToList(); // select * from doctor
+        var doctors = doctorsRepository.Get();
 
         return View(doctors);
     }
@@ -34,26 +30,22 @@ public class DoctorsController: Controller
     public IActionResult Add(Doctor doctor)
     {
         // Save to db
-        db.Doctor.Add(doctor);
-        db.SaveChanges();
-    
+        doctorsRepository.Insert(doctor);
+
         return RedirectToAction(nameof(Index));
     }
 
     [HttpGet]
     public IActionResult Edit(int id)
     {
-        var doctor = db.Doctor.Find(id);
-
+        var doctor = doctorsRepository.Get(id);
         return View(doctor);
     }
 
     [HttpPost]
     public IActionResult Edit(Doctor doctor)
     {
-        // Save to db
-        db.Doctor.Update(doctor);
-        db.SaveChanges();
+        doctorsRepository.Edit(doctor);
 
         return RedirectToAction(nameof(Index));
     }
@@ -61,7 +53,7 @@ public class DoctorsController: Controller
     [HttpGet]
     public IActionResult Delete(int id)
     {
-        var doctor = db.Doctor.Find(id);
+        var doctor = doctorsRepository.Get(id);
 
         return View(doctor);
     }
@@ -69,9 +61,7 @@ public class DoctorsController: Controller
     [HttpPost]
     public IActionResult Delete(Doctor doctor)
     {
-        // Save to db
-        db.Doctor.Remove(doctor);
-        db.SaveChanges();
+        doctorsRepository.Delete(doctor);
 
         return RedirectToAction(nameof(Index));
     }
