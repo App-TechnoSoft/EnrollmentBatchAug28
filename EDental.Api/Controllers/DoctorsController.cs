@@ -18,10 +18,35 @@ public class DoctorsController(IDoctorsRepository doctorsRepository) : Controlle
         return Ok(doctors);
     }
 
+    [HttpGet("{id}")]
+    public IActionResult Get(int id)
+    {
+        var doctor = doctorsRepository.Get(id);
+
+        if (doctor is null)
+            return NotFound($"Doctor with id {id} not found");
+
+        return Ok(doctor);
+    }
+
     [HttpPost]
     public IActionResult Post(Doctor doctor)
     {
         var result = doctorsRepository.Insert(doctor);
+        return Ok(result);
+    }
+
+    [HttpPut]
+    public IActionResult Put(Doctor doctor)
+    {
+        var result = doctorsRepository.Edit(doctor);
+        return Ok(result);
+    }
+
+    [HttpDelete]
+    public IActionResult Delete(Doctor doctor)
+    {
+        var result = doctorsRepository.Delete(doctor);
         return Ok(result);
     }
 }
