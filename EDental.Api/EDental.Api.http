@@ -1,6 +1,19 @@
 @EDental.Api_HostAddress = http://localhost:5088
 
-GET {{EDental.Api_HostAddress}}/weatherforecast/
+GET {{EDental.Api_HostAddress}}/api/doctors
 Accept: application/json
 
 ###
+
+POST {{EDental.Api_HostAddress}}/api/doctors
+content-type: application/json
+{
+    "fullName": "Dr. Brit Rawal",
+    "address": "Lalitpur",
+    "phone": "9851345885",
+    "ndcNumber": "EHGT57654564",
+    "qualification": "MD",
+    "specialization": "Ortho",
+    "gender": 1,
+    "dob": "2024-10-10T07:29:00"
+}

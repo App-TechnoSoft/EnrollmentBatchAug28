@@ -1,6 +1,7 @@
 using EDental.Data;
 using EDental.Infrastructure.Repositories.Implementations;
 using EDental.Infrastructure.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EDentalDbContext>();
 builder.Services.AddScoped<IDoctorsRepository, DoctorsRepository>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<EDentalDbContext>();
 
 var app = builder.Build();
 
@@ -27,5 +30,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
